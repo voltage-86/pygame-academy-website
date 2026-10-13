@@ -1,0 +1,581 @@
+/* ==========================================
+   RESPONSIVE LAYOUT
+   ========================================== */
+
+
+/* ==========================================
+   Main Page Media Queries
+   ========================================== */
+
+@media (max-width: 800px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .menu-button {
+    display: flex;
+  }
+
+  .hero {
+    min-height: 600px;
+    padding: 90px 24px 80px;
+  }
+
+  .explore-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pygame-features {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  .footer-links {
+    gap: 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    width: min(calc(100% - 28px), var(--max-width));
+  }
+
+  .hero {
+    min-height: 560px;
+    padding: 70px 20px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.1rem, 11vw, 3.1rem);
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-buttons .button {
+    width: 100%;
+  }
+
+  .progress-section,
+  .explore-section,
+  .pygame-section {
+    width: min(calc(100% - 28px), var(--max-width));
+  }
+
+  .section-heading {
+    margin-bottom: 25px;
+  }
+
+  .progress-card {
+    padding: 22px;
+  }
+
+  .progress-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .xp-display {
+    text-align: left;
+  }
+
+  .continue-learning {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .continue-learning .button {
+    width: 100%;
+  }
+
+  .explore-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .explore-card {
+    min-height: 245px;
+  }
+
+  .pygame-introduction {
+    padding: 27px;
+  }
+
+  .footer-content,
+  .footer-bottom {
+    width: min(calc(100% - 28px), var(--max-width));
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-links {
+    gap: 45px;
+  }
+}
+
+
+/* ==========================================
+   Learn Page Media Queries
+   ========================================== */
+
+@media (max-width: 800px) {
+  .learn-hero {
+    padding: 70px 0 55px;
+  }
+
+  .lesson-card {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .lesson-number {
+    width: 52px;
+    height: 52px;
+  }
+
+  .learning-outcomes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .learn-container {
+    width: min(calc(100% - 32px), var(--max-width));
+  }
+
+  .learn-hero h1 {
+    font-size: 2rem;
+  }
+
+  .learn-progress-card {
+    padding: 22px;
+  }
+
+  .learn-progress-info {
+    align-items: flex-start;
+  }
+
+  .learn-progress-percentage {
+    font-size: 1.2rem;
+  }
+
+  .lesson-card {
+    padding: 22px;
+  }
+
+  .lesson-card-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .lesson-status {
+    align-self: flex-start;
+  }
+
+  .lesson-button {
+    width: 100%;
+  }
+}
+
+
+/* ==========================================
+   Lesson Page Media Queries
+   ========================================== */
+
+@media (max-width: 900px) {
+  .lesson-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .lesson-sidebar {
+    position: static;
+  }
+
+  .lesson-sidebar-card {
+    padding: 15px;
+  }
+
+  .lesson-content-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .content-nav-link {
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .lesson-container {
+    width: min(calc(100% - 32px), var(--max-width));
+  }
+
+  .lesson-hero {
+    padding: 50px 0 45px;
+  }
+
+  .lesson-back-link {
+    margin-bottom: 25px;
+  }
+
+  .lesson-header-content h1 {
+    font-size: 2rem;
+  }
+
+  .lesson-section {
+    padding: 45px 0 60px;
+  }
+
+  .lesson-content-section {
+    padding-bottom: 55px;
+  }
+
+  .lesson-content-section h2 {
+    font-size: 1.45rem;
+  }
+
+  .lesson-practice-card,
+  .lesson-complete-card {
+    padding: 20px;
+  }
+
+  .practice-options {
+    grid-template-columns: 1fr;
+  }
+
+  .lesson-navigation {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .lesson-navigation .button {
+    width: 100%;
+  }
+}
+
+
+/* ==========================================
+   Try It Yourself Page Media Queries
+   ========================================== */
+
+@media (max-width: 900px) {
+  .try-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .code-editor,
+  .code-output,
+  .CodeMirror {
+    height: 400px;
+    min-height: 400px;
+  }
+
+  .code-output {
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 600px) {
+  .try-container {
+    width: min(calc(100% - 32px), var(--max-width));
+  }
+
+  .try-hero {
+    padding: 50px 0 45px;
+  }
+
+  .try-hero h1 {
+    font-size: 2rem;
+  }
+
+  .try-section {
+    padding: 45px 0 60px;
+  }
+
+  .editor-header > div {
+    gap: 8px;
+  }
+
+  .editor-example-name {
+    display: none;
+  }
+
+  .code-editor,
+  .CodeMirror {
+    height: 350px;
+    min-height: 350px;
+    font-size: 0.72rem;
+  }
+
+  .code-editor {
+    padding: 16px;
+  }
+
+  .code-output {
+    height: 250px;
+    min-height: 250px;
+    max-height: 250px;
+    padding: 16px;
+    font-size: 0.72rem;
+  }
+
+  .editor-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .editor-actions .button {
+    width: 100%;
+  }
+
+  .editor-help {
+    padding: 18px;
+  }
+
+  /* Pygame Preview Overrides */
+  .pygame-preview-screen {
+    min-height: 300px;
+    padding: 15px;
+  }
+
+  .pygame-preview-header > div {
+    gap: 8px;
+  }
+
+  .pygame-preview-header .button {
+    padding: 8px 12px;
+  }
+
+  /* Challenge Instructions Overrides */
+  .challenge-instructions {
+    width: min(calc(100% - 32px), var(--max-width));
+    padding: 22px 20px;
+  }
+
+  .challenge-instructions h2 {
+    font-size: 1.15rem;
+  }
+
+  .challenge-description {
+    font-size: 0.76rem;
+  }
+
+  .challenge-reward {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  /* Project Goals & Completion */
+  .project-goal {
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .project-complete-area {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .project-complete-button {
+    width: 100%;
+  }
+}
+
+
+/* ==========================================
+   Challenges Page Media Queries
+   ========================================== */
+
+@media (max-width: 800px) {
+  .challenge-list {
+    width: min(calc(100% - 40px), var(--max-width));
+  }
+
+  .challenge-list-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .challenge-list-header > p {
+    text-align: left;
+  }
+
+  .challenge-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-challenge {
+    grid-template-columns: 1fr;
+    width: min(calc(100% - 40px), var(--max-width));
+  }
+
+  .featured-challenge-visual {
+    min-height: 180px;
+    border-top: 1px solid rgba(139, 92, 246, 0.15);
+    border-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .challenges-hero {
+    padding: 50px 0 45px;
+  }
+
+  .challenges-hero h1 {
+    font-size: 2rem;
+  }
+
+  .challenge-list {
+    width: min(calc(100% - 32px), var(--max-width));
+    padding: 45px 0 60px;
+  }
+
+  .challenge-filters {
+    gap: 6px;
+  }
+
+  .challenge-filter {
+    padding: 8px 13px;
+    font-size: 0.68rem;
+  }
+
+  .challenge-card-content {
+    padding: 20px;
+  }
+
+  .challenge-card-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .challenge-button {
+    justify-content: center;
+  }
+
+  .featured-challenge {
+    width: min(calc(100% - 32px), var(--max-width));
+    margin-bottom: 60px;
+  }
+
+  .featured-challenge-content {
+    padding: 30px 22px;
+  }
+
+  .featured-challenge-visual {
+    min-height: 140px;
+  }
+
+  .featured-challenge-visual span {
+    font-size: 3rem;
+  }
+}
+
+
+/* ==========================================
+   Projects Page Media Queries
+   ========================================== */
+
+@media (max-width: 800px) {
+  .project-list {
+    width: min(calc(100% - 40px), var(--max-width));
+  }
+
+  .project-list-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .project-list-header > p {
+    text-align: left;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-progress-section {
+    width: min(calc(100% - 40px), var(--max-width));
+  }
+
+  .project-progress {
+    grid-template-columns: 1fr;
+  }
+
+  .project-progress-visual {
+    min-height: 180px;
+    border-top: 1px solid rgba(139, 92, 246, 0.15);
+    border-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-hero {
+    padding: 50px 0 45px;
+  }
+
+  .projects-hero h1 {
+    font-size: 2rem;
+  }
+
+  .project-list {
+    width: min(calc(100% - 32px), var(--max-width));
+    padding: 45px 0 60px;
+  }
+
+  .project-filters {
+    gap: 6px;
+  }
+
+  .project-filter {
+    padding: 8px 13px;
+    font-size: 0.68rem;
+  }
+
+  .project-card-content {
+    padding: 20px;
+  }
+
+  .project-card-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .project-button {
+    justify-content: center;
+  }
+
+  .project-progress-section {
+    width: min(calc(100% - 32px), var(--max-width));
+    margin-bottom: 60px;
+  }
+
+  .project-progress-content {
+    padding: 30px 22px;
+  }
+
+  .project-progress-visual {
+    min-height: 140px;
+  }
+
+  .project-progress-visual span {
+    font-size: 3rem;
+  }
+}

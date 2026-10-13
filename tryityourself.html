@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Experiment with Python code using the Pygame Academy interactive coding editor.">
+
+  <title>Try It Yourself | Pygame Academy</title>
+
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.65.20/lib/codemirror.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/codemirror@5.65.20/lib/codemirror.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/codemirror@5.65.20/mode/python/python.js"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+  <script src="js/tryityourself.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Navigation bar and mobile menu -->
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="index.html" class="logo">
+        <img src="img/logo.png" alt="" class="logo-image">
+        <span>Pygame Academy</span>
+      </a>
+
+      <div class="desktop-nav">
+        <a href="index.html">Home</a>
+        <a href="learn.html">Learn</a>
+        <a href="tryityourself.html">Try It Yourself</a>
+        <a href="challenges.html">Challenges</a>
+        <a href="projects.html">Projects</a>
+      </div>
+
+      <button
+        class="menu-button"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu-header">
+        <span class="mobile-menu-title">Menu</span>
+
+        <button
+          class="mobile-menu-close"
+          type="button"
+          aria-label="Close navigation menu"
+        >
+          &times;
+        </button>
+      </div>
+
+      <div class="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="learn.html">Learn</a>
+        <a href="tryityourself.html">Try It Yourself</a>
+        <a href="challenges.html">Challenges</a>
+        <a href="projects.html">Projects</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Page hero banner -->
+    <section class="try-hero">
+      <div class="try-container">
+        <p class="section-label">INTERACTIVE EDITOR</p>
+        <h1>Try It Yourself</h1>
+        <p>
+          Experiment with Python code, change the examples, and see what happens when you run them.
+        </p>
+      </div>
+    </section>
+
+    <!-- Interactive Code Editor Section -->
+    <section class="try-section">
+      <div class="try-container">
+
+        <div class="try-layout">
+
+          <!-- Code Editor Panel -->
+          <div class="editor-panel">
+            <div class="editor-header">
+              <div>
+                <span class="editor-label">CODE EDITOR</span>
+                <span id="example-name" class="editor-example-name">Python Example</span>
+              </div>
+
+              <button id="reset-button" class="button button-secondary" type="button">
+                Reset
+              </button>
+            </div>
+
+            <textarea
+              id="code-editor"
+              class="code-editor"
+              spellcheck="false"
+              aria-label="Python code editor"
+            ></textarea>
+
+            <div class="editor-actions">
+              <button id="run-button" class="button button-primary" type="button">
+                Run Code
+              </button>
+
+              <button id="clear-button" class="button button-secondary" type="button">
+                Clear
+              </button>
+            </div>
+          </div>
+
+          <!-- Code Output Panel -->
+          <div class="output-panel">
+            <div class="output-header">
+              <span class="editor-label">OUTPUT</span>
+              <span id="output-status" class="output-status">Ready</span>
+            </div>
+
+            <pre id="code-output" class="code-output">Run your code to see the output here.</pre>
+          </div>
+
+        </div>
+
+        <!-- Pygame Graphical Preview Area -->
+        <div id="pygame-preview" class="pygame-preview" hidden>
+          <div class="pygame-preview-header">
+            <div>
+              <span class="editor-label">PYGAME PREVIEW</span>
+              <span id="pygame-status" class="pygame-status">Ready</span>
+            </div>
+
+            <button id="pygame-stop-button" class="button button-secondary" type="button">
+              Stop
+            </button>
+          </div>
+
+          <div class="pygame-preview-screen">
+            <iframe id="pygame-frame" title="Pygame preview" src="about:blank"></iframe>
+          </div>
+        </div>
+
+        <!-- Instructions and Helper Card -->
+        <div class="editor-help">
+          <div>
+            <span class="help-icon" aria-hidden="true">?</span>
+          </div>
+
+          <div>
+            <h2>Experiment with the code</h2>
+            <p>
+              Change values, add new lines, or try changing the code completely. Then run it to see what happens.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">
+          <img src="img/logo.png" alt="" class="footer-logo-image">
+          <span>Pygame Academy</span>
+        </a>
+        <p>Learn Python. Build Games.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-column">
+          <h2>Learn</h2>
+          <a href="learn.html">Python Basics</a>
+          <a href="learn.html">Pygame</a>
+        </div>
+
+        <div class="footer-column">
+          <h2>Explore</h2>
+          <a href="tryityourself.html">Try It Yourself</a>
+          <a href="challenges.html">Challenges</a>
+          <a href="projects.html">Projects</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Pygame Academy</p>
+      <p>Educational project &bull; Built for high school learners</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn Python and Pygame through interactive lessons at Pygame Academy.">
+
+  <title>Lesson | Pygame Academy</title>
+
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+  <script src="js/lesson.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Navigation bar and mobile menu -->
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="index.html" class="logo">
+        <img src="img/logo.png" alt="" class="logo-image">
+        <span>Pygame Academy</span>
+      </a>
+
+      <div class="desktop-nav">
+        <a href="index.html">Home</a>
+        <a href="learn.html">Learn</a>
+        <a href="tryityourself.html">Try It Yourself</a>
+        <a href="challenges.html">Challenges</a>
+        <a href="projects.html">Projects</a>
+      </div>
+
+      <button
+        class="menu-button"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu-header">
+        <span class="mobile-menu-title">Menu</span>
+
+        <button
+          class="mobile-menu-close"
+          type="button"
+          aria-label="Close navigation menu"
+        >
+          &times;
+        </button>
+      </div>
+
+      <div class="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="learn.html">Learn</a>
+        <a href="tryityourself.html">Try It Yourself</a>
+        <a href="challenges.html">Challenges</a>
+        <a href="projects.html">Projects</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Top lesson header banner -->
+    <section class="lesson-hero">
+      <div class="lesson-container">
+        <a href="learn.html" class="lesson-back-link">
+          <span aria-hidden="true">←</span> Back to Learning Path
+        </a>
+
+        <div class="lesson-header-content">
+          <p class="section-label" id="lesson-number">LESSON 1</p>
+          <h1 id="lesson-title">Python Fundamentals</h1>
+
+          <p id="lesson-description">
+            Learn the fundamentals of Python programming and build the foundation for creating games.
+          </p>
+
+          <div class="lesson-header-meta">
+            <span id="lesson-difficulty">Beginner</span>
+            <span id="lesson-duration">~20 min</span>
+            <span>+100 XP</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lesson area with sidebar and main lesson content -->
+    <section class="lesson-section">
+      <div class="lesson-container">
+        <div class="lesson-layout">
+
+          <!-- Sidebar navigation for quick section links -->
+          <aside class="lesson-sidebar" aria-label="Lesson navigation">
+            <div class="lesson-sidebar-card">
+              <p class="sidebar-label">LESSON CONTENT</p>
+
+              <nav class="lesson-content-nav">
+                <a href="#introduction" class="content-nav-link active">Introduction</a>
+                <a href="#concepts" class="content-nav-link">Core Concepts</a>
+                <a href="#example" class="content-nav-link">Example</a>
+                <a href="#practice" class="content-nav-link">Practice</a>
+                <a href="#complete" class="content-nav-link">Complete Lesson</a>
+              </nav>
+            </div>
+          </aside>
+
+          <!-- Main lesson content sections -->
+          <article class="lesson-content">
+
+            <!-- 01 Introduction -->
+            <section class="lesson-content-section" id="introduction">
+              <p class="content-section-label">01 &mdash; INTRODUCTION</p>
+              <h2 id="content-introduction-title">Welcome to Python</h2>
+
+              <div id="content-introduction">
+                <p>
+                  Python is a programming language designed to be readable and relatively easy to learn. It is used for everything from automation and websites to data science and game development.
+                </p>
+
+                <p>
+                  In this lesson, you will learn the basic concepts you need before moving on to game development with Pygame.
+                </p>
+              </div>
+            </section>
+
+            <!-- 02 Core Concepts -->
+            <section class="lesson-content-section" id="concepts">
+              <p class="content-section-label">02 &mdash; CORE CONCEPTS</p>
+              <h2>The Basics</h2>
+
+              <div id="concept-content">
+                <div class="concept-block">
+                  <h3>Variables</h3>
+                  <p>Variables allow you to store information and use it later in your program.</p>
+                  <pre><code>name = "Alex"
+score = 100</code></pre>
+                </div>
+
+                <div class="concept-block">
+                  <h3>Data Types</h3>
+                  <p>Python has different types of data, such as text, whole numbers, decimal numbers, and true or false values.</p>
+                  <pre><code>name = "Alex"
+score = 100
+speed = 4.5
+game_over = False</code></pre>
+                </div>
+
+                <div class="concept-block">
+                  <h3>Input and Output</h3>
+                  <p>Programs can display information using <code>print()</code> and receive information from users using <code>input()</code>.</p>
+                  <pre><code>name = input("What is your name?")
+
+print("Hello", name)</code></pre>
+                </div>
+              </div>
+            </section>
+
+            <!-- 03 Code Example -->
+            <section class="lesson-content-section" id="example">
+              <p class="content-section-label">03 &mdash; EXAMPLE</p>
+              <h2>Putting It Together</h2>
+
+              <p id="example-description">
+                Here is a simple example that combines some of the concepts from this lesson.
+              </p>
+
+              <div class="code-example">
+                <div class="code-example-header">
+                  <span>Python</span>
+                  <button type="button" class="copy-code-button">Copy</button>
+                </div>
+
+                <pre><code id="lesson-example-code">name = "Player"
+score = 0
+
+print("Welcome,", name)
+print("Score:", score)</code></pre>
+              </div>
+
+              <div class="lesson-example-action">
+                <a href="tryityourself.html" id="try-it-button" class="button button-primary">
+                  Try It Yourself
+                </a>
+              </div>
+
+              <p class="code-copy-message" aria-live="polite"></p>
+            </section>
+
+            <!-- 04 Practice Challenge -->
+            <section class="lesson-content-section" id="practice">
+              <p class="content-section-label">04 &mdash; PRACTICE</p>
+              <h2>Test Your Knowledge</h2>
+
+              <p>Try a quick challenge to make sure you understand the concepts before continuing.</p>
+
+              <div class="lesson-practice-card">
+                <p class="practice-question">
+                  Which Python function is used to display information in the console?
+                </p>
+
+                <div class="practice-options">
+                  <button type="button" class="practice-option" data-answer="wrong">input()</button>
+                  <button type="button" class="practice-option" data-answer="correct">print()</button>
+                  <button type="button" class="practice-option" data-answer="wrong">display()</button>
+                  <button type="button" class="practice-option" data-answer="wrong">output()</button>
+                </div>
+
+                <p class="practice-feedback" aria-live="polite"></p>
+              </div>
+            </section>
+
+            <!-- 05 Lesson Completion -->
+            <section class="lesson-content-section lesson-complete-section" id="complete">
+              <div class="lesson-complete-card">
+                <p class="content-section-label">05 &mdash; COMPLETE</p>
+                <h2>Ready to finish?</h2>
+
+                <p>Complete this lesson to earn XP and unlock the next step in your learning path.</p>
+
+                <button type="button" class="button button-primary" id="complete-lesson-button">
+                  Complete Lesson
+                </button>
+
+                <p class="completion-message" id="completion-message" aria-live="polite"></p>
+              </div>
+            </section>
+
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom navigation buttons -->
+    <section class="lesson-navigation-section">
+      <div class="lesson-container">
+        <div class="lesson-navigation">
+          <a href="learn.html" class="button button-secondary">Back to Lessons</a>
+
+          <a href="lesson.html?id=conditions-loops" class="button button-primary" id="next-lesson-button">
+            Next Lesson
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">
+          <img src="img/logo.png" alt="" class="footer-logo-image">
+          <span>Pygame Academy</span>
+        </a>
+        <p>Learn Python. Build Games.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-column">
+          <h2>Learn</h2>
+          <a href="learn.html">Python Basics</a>
+          <a href="learn.html">Pygame</a>
+        </div>
+
+        <div class="footer-column">
+          <h2>Explore</h2>
+          <a href="tryityourself.html">Try It Yourself</a>
+          <a href="challenges.html">Challenges</a>
+          <a href="projects.html">Projects</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Pygame Academy</p>
+      <p>Educational project &bull; Built for high school learners</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

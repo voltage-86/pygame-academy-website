@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pygame Runner</title>
+
+  <style>
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: #000000;
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <canvas id="canvas" width="800" height="600"></canvas>
+
+  <script>
+    let pyodide = null;
+
+    // ==========================================
+    // Initialise Pyodide & Pygame CE
+    // ==========================================
+
+    async function initialise() {
+      try {
+        // Dynamically add the Pyodide script from CDN
+        const script = document.createElement("script");
+        script.src = "https://cdn.jsdelivr.net/pyodide/v0.29.0/full/pyodide.js";
+        document.head.appendChild(script);
+
+        // Wait for script to finish loading into the DOM
+        await new Promise((resolve, reject) => {
+          script.addEventListener("load", resolve);
+          script.addEventListener("error", reject);
+        });
+
+        // Initialise Pyodide environment
+        pyodide = await loadPyodide({
+          indexURL: "https://cdn.jsdelivr.net/pyodide/v0.29.0/full/"
+        });
+
+        // Route Pygame graphics directly to the canvas
+        pyodide.canvas.setCanvas2D(document.querySelector("#canvas"));
+
+        // Load Pygame Community Edition package
+        await pyodide.loadPackage("pygame-ce");
+
+        // Notify parent iframe page that setup is done
+        window.parent.postMessage({ type: "pygame-ready" }, "*");
+
+      } catch (error) {
+        window.parent.postMessage({
+          type: "pygame-error",
+          error: error.message || String(error)
+        }, "*");
+      }
+    }
+
+
+    // ==========================================
+    // Run Pygame Code in Browser
+    // ==========================================
+
+    async function runPygame(code) {
+      try {
+        // Swap desktop clock.tick for asyncio sleep so browser window doesn't freeze
+        const browserCode = code.replace(
+          /clock\.tick\(\s*\d+\s*\)/g,
+          "await asyncio.sleep(1 / 60)"
+        );
+
+        const finalCode = "import asyncio\n\n" + browserCode;
+
+        await pyodide.runPythonAsync(finalCode);
+
+        window.parent.postMessage({ type: "pygame-complete" }, "*");
+
+      } catch (error) {
+        window.parent.postMessage({
+          type: "pygame-error",
+          error: error.message || String(error)
+        }, "*");
+      }
+    }
+
+
+    // ==========================================
+    // Message Handling & Startup
+    // ==========================================
+
+    // Listen for code sent from main website
+    window.addEventListener("message", (event) => {
+      if (!event.data) {
+        return;
+      }
+
+      if (event.data.type === "run-pygame") {
+        runPygame(event.data.code);
+      }
+    });
+
+    // Start setup on iframe load
+    initialise();
+  </script>
+
+</body>
+
+</html>

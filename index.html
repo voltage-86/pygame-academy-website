@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pygame Academy - Learn Python programming by building games with Pygame.">
+
+  <title>Pygame Academy | Learn Python. Build Games.</title>
+
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Navigation bar and mobile menu -->
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="index.html" class="logo">
+        <img src="img/logo.png" alt="" class="logo-image">
+        <span>Pygame Academy</span>
+      </a>
+
+      <div class="desktop-nav">
+        <a href="index.html">Home</a>
+        <a href="learn.html">Learn</a>
+        <a href="tryityourself.html">Try It Yourself</a>
+        <a href="challenges.html">Challenges</a>
+        <a href="projects.html">Projects</a>
+      </div>
+
+      <button
+        class="menu-button"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu-header">
+        <span class="mobile-menu-title">Menu</span>
+
+        <button
+          class="mobile-menu-close"
+          type="button"
+          aria-label="Close navigation menu"
+        >
+          &times;
+        </button>
+      </div>
+
+      <div class="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="learn.html">Learn</a>
+        <a href="tryityourself.html">Try It Yourself</a>
+        <a href="challenges.html">Challenges</a>
+        <a href="projects.html">Projects</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero banner section -->
+    <section class="hero">
+      <div class="hero-content">
+        <p class="hero-label">LEARN • PRACTICE • CREATE</p>
+
+        <h1>Welcome to Pygame Academy</h1>
+
+        <p class="hero-description">
+          Learn Python programming by building games with Pygame. Follow structured lessons, practise your skills, and create your own games.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="learn.html" class="button button-primary">Start Learning</a>
+          <a href="tryityourself.html" class="button button-secondary">Try It Yourself</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- User level and XP progress tracker -->
+    <section class="progress-section">
+      <div class="section-heading">
+        <p class="section-label">YOUR PROGRESS</p>
+        <h2>Keep Learning</h2>
+        <p>Complete lessons and challenges to earn XP and level up your programming skills.</p>
+      </div>
+
+      <div class="progress-card">
+        <div class="progress-header">
+          <div class="level-info">
+            <p class="progress-label">Current Level</p>
+            <h3>Level <span id="player-level">1</span></h3>
+          </div>
+
+          <div class="xp-display">
+            <p class="progress-label">Experience</p>
+            <p><span id="current-xp">0</span> / <span id="next-level-xp">100</span> XP</p>
+          </div>
+        </div>
+
+        <div
+          class="progress-bar"
+          role="progressbar"
+          aria-label="Learning progress"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+        >
+          <div class="progress-bar-fill" id="progress-bar-fill"></div>
+        </div>
+
+        <div class="progress-details">
+          <p><span id="progress-percent">0</span>% complete</p>
+        </div>
+
+        <div class="continue-learning">
+          <div class="continue-content">
+            <p class="progress-label">CURRENT LESSON</p>
+            <h3 id="current-lesson">Python Fundamentals</h3>
+            <p id="current-lesson-description">Start learning the basics of Python programming.</p>
+          </div>
+
+          <a
+            href="lesson.html?id=python-fundamentals"
+            class="button button-primary"
+            id="continue-button"
+          >
+            Continue Learning
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation cards for main site sections -->
+    <section class="explore-section">
+      <div class="section-heading">
+        <p class="section-label">EXPLORE</p>
+        <h2>What do you want to do?</h2>
+        <p>Learn new concepts, test your skills, or start building your own games.</p>
+      </div>
+
+      <div class="explore-grid">
+        <article class="explore-card">
+          <div class="card-icon" aria-hidden="true">&lt;/&gt;</div>
+          <div class="card-content">
+            <h3>Learn</h3>
+            <p>Follow structured lessons that take you from Python fundamentals to creating games with Pygame.</p>
+
+            <a href="learn.html">
+              Explore Lessons
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="explore-card">
+          <div class="card-icon" aria-hidden="true">?</div>
+          <div class="card-content">
+            <h3>Challenges</h3>
+            <p>Put your programming knowledge to the test with challenges designed to reinforce what you learn.</p>
+
+            <a href="challenges.html">
+              View Challenges
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="explore-card">
+          <div class="card-icon" aria-hidden="true">★</div>
+          <div class="card-content">
+            <h3>Projects</h3>
+            <p>Turn your skills into complete games with project ideas and features to experiment with.</p>
+
+            <a href="projects.html">
+              Explore Projects
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Overview of what Pygame is and its features -->
+    <section class="pygame-section">
+      <div class="pygame-introduction">
+        <p class="section-label">GET STARTED</p>
+        <h2>What is Pygame?</h2>
+        <p>
+          Pygame is a Python library that makes it easier to create games and other interactive programs. It provides tools for graphics, sound, keyboard input, and more, allowing you to focus on building your game.
+        </p>
+
+        <a href="learn.html" class="text-link">
+          Learn about Pygame
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div class="pygame-features">
+        <article class="feature">
+          <h3>Graphics</h3>
+          <p>Draw shapes, images, and game worlds using Python.</p>
+        </article>
+
+        <article class="feature">
+          <h3>Input</h3>
+          <p>Respond to keyboard and mouse input to make your games interactive.</p>
+        </article>
+
+        <article class="feature">
+          <h3>Sound</h3>
+          <p>Add music and sound effects to make your games more engaging.</p>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">
+          <img src="img/logo.png" alt="" class="footer-logo-image">
+          <span>Pygame Academy</span>
+        </a>
+        <p>Learn Python. Build Games.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-column">
+          <h2>Learn</h2>
+          <a href="learn.html">Python Basics</a>
+          <a href="learn.html">Pygame</a>
+        </div>
+
+        <div class="footer-column">
+          <h2>Explore</h2>
+          <a href="tryityourself.html">Try It Yourself</a>
+          <a href="challenges.html">Challenges</a>
+          <a href="projects.html">Projects</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Pygame Academy</p>
+      <p>Educational project &bull; Built for high school learners</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

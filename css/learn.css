@@ -1,0 +1,299 @@
+/* ==========================================
+   LEARN PAGE
+   ========================================== */
+
+
+/* ==========================================
+   Learn Layout & Container
+   ========================================== */
+
+.learn-container {
+  width: min(calc(100% - 48px), var(--max-width));
+  margin: 0 auto;
+}
+
+
+/* ==========================================
+   Learn Hero
+   ========================================== */
+
+.learn-hero {
+  padding: 90px 0 70px;
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(139, 92, 246, 0.14),
+    transparent 45%
+  );
+}
+
+.learn-hero-content {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.learn-hero h1 {
+  margin-bottom: 18px;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+}
+
+.learn-hero p:not(.section-label) {
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+
+/* ==========================================
+   Learn Progress Section
+   ========================================== */
+
+.learn-progress-section {
+  padding: 20px 0 70px;
+}
+
+.learn-progress-card {
+  padding: 28px;
+  background: var(--surface-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.learn-progress-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.learn-progress-info h2 {
+  margin-top: 4px;
+  font-size: 1.2rem;
+}
+
+.learn-progress-percentage {
+  color: var(--primary-light);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.learn-progress-message {
+  margin-top: 14px;
+  font-size: 0.82rem;
+}
+
+
+/* ==========================================
+   Learning Path & Lesson Cards
+   ========================================== */
+
+.learning-path-section {
+  padding: 30px 0 90px;
+}
+
+.learning-path-section .section-heading {
+  max-width: 700px;
+  margin-bottom: 45px;
+}
+
+.learning-path {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.lesson-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 82px 1fr;
+  gap: 25px;
+  padding: 28px;
+  background: var(--surface-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.lesson-card-active {
+  border-color: rgba(139, 92, 246, 0.45);
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.07);
+}
+
+.lesson-card-active:hover {
+  background: var(--surface-hover);
+  border-color: rgba(139, 92, 246, 0.7);
+  transform: translateY(-3px);
+}
+
+.lesson-card-completed {
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+.lesson-card-locked {
+  opacity: 0.58;
+}
+
+.lesson-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: start;
+  width: 62px;
+  height: 62px;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 14px;
+  color: var(--primary-light);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.lesson-card-completed .lesson-number {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.35);
+  color: var(--success);
+}
+
+
+/* ==========================================
+   Lesson Card Content & Status
+   ========================================== */
+
+.lesson-card-content {
+  min-width: 0;
+}
+
+.lesson-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.lesson-type {
+  margin-bottom: 4px;
+  color: var(--primary-light);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.lesson-card h3 {
+  font-size: 1.25rem;
+}
+
+.lesson-card-content > p {
+  max-width: 750px;
+  margin-bottom: 18px;
+  line-height: 1.7;
+}
+
+.lesson-status {
+  flex-shrink: 0;
+  padding: 6px 10px;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  border-radius: 6px;
+  color: var(--primary-light);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.lesson-card-completed .lesson-status {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.25);
+  color: var(--success);
+}
+
+.lesson-card-locked .lesson-status {
+  background: rgba(167, 172, 184, 0.08);
+  border-color: var(--border);
+  color: var(--muted);
+}
+
+.lesson-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.lesson-meta span {
+  padding: 5px 9px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.lesson-button {
+  min-width: 135px;
+}
+
+
+/* ==========================================
+   Learning Outcomes Section
+   ========================================== */
+
+.learn-outcomes-section {
+  padding: 30px 0 100px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.learn-outcomes-section .section-heading {
+  max-width: 700px;
+  margin-bottom: 40px;
+}
+
+.learning-outcomes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.outcome-card {
+  padding: 28px;
+  background: var(--surface-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.outcome-card:hover {
+  background: var(--surface-hover);
+  border-color: rgba(139, 92, 246, 0.4);
+  transform: translateY(-3px);
+}
+
+.outcome-card .card-icon {
+  margin-bottom: 20px;
+}
+
+.outcome-card h3 {
+  margin-bottom: 8px;
+}
+
+.outcome-card p {
+  line-height: 1.7;
+}

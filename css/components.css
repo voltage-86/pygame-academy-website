@@ -1,0 +1,157 @@
+/* ==========================================
+   Buttons
+   ========================================== */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 12px 21px;
+  border-radius: 9px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    color 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  color: #FFFFFF;
+  box-shadow: 0 7px 22px rgba(139, 92, 246, 0.2);
+}
+
+.button-primary:hover {
+  background: var(--primary-light);
+  border-color: var(--primary-light);
+  box-shadow: 0 10px 28px rgba(139, 92, 246, 0.3);
+}
+
+.button-secondary {
+  background: var(--surface-light);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: var(--secondary);
+}
+
+.button-secondary:hover {
+  background: rgba(56, 189, 248, 0.1);
+  border-color: var(--secondary);
+  color: #FFFFFF;
+}
+
+
+/* ==========================================
+   Cards
+   ========================================== */
+
+.explore-card,
+.feature {
+  background: var(--surface-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-large);
+}
+
+
+/* ==========================================
+   Footer Component
+   ========================================== */
+
+.site-footer {
+  margin-top: 40px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  width: min(calc(100% - 48px), var(--max-width));
+  margin: 0 auto;
+  padding: 55px 0 45px;
+}
+
+.footer-brand {
+  max-width: 300px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  color: var(--primary-light);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  transition: color 0.2s ease;
+}
+
+.footer-logo:hover {
+  color: var(--primary);
+}
+
+.footer-logo-image {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.footer-brand p {
+  font-size: 0.8rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 80px;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.footer-column h2 {
+  margin-bottom: 5px;
+  color: var(--primary-light);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.footer-column a {
+  color: var(--muted);
+  font-size: 0.78rem;
+  transition: color 0.2s ease;
+}
+
+.footer-column a:hover {
+  color: var(--primary-light);
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: min(calc(100% - 48px), var(--max-width));
+  margin: 0 auto;
+  padding: 18px 0;
+  border-top: 1px solid var(--border);
+}
+
+.footer-bottom p {
+  font-size: 0.7rem;
+}

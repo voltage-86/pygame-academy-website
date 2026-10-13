@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Test your Python and Pygame skills with coding challenges on Pygame Academy.">
+
+  <title>Challenges | Pygame Academy</title>
+
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+  <script src="js/challenges.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Navigation bar and mobile menu -->
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="index.html" class="logo">
+        <img src="img/logo.png" alt="" class="logo-image">
+        <span>Pygame Academy</span>
+      </a>
+
+      <div class="desktop-nav">
+        <a href="index.html">Home</a>
+        <a href="learn.html">Learn</a>
+        <a href="tryityourself.html">Try It Yourself</a>
+        <a href="challenges.html">Challenges</a>
+        <a href="projects.html">Projects</a>
+      </div>
+
+      <button
+        class="menu-button"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu-header">
+        <span class="mobile-menu-title">Menu</span>
+
+        <button
+          class="mobile-menu-close"
+          type="button"
+          aria-label="Close navigation menu"
+        >
+          &times;
+        </button>
+      </div>
+
+      <div class="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="learn.html">Learn</a>
+        <a href="tryityourself.html">Try It Yourself</a>
+        <a href="challenges.html">Challenges</a>
+        <a href="projects.html">Projects</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Page hero banner -->
+    <section class="challenges-hero">
+      <div class="try-container">
+        <p class="section-label">CHALLENGE ZONE</p>
+
+        <h1>Test Your Skills</h1>
+
+        <p>
+          Put your Python and Pygame knowledge to the test. Complete challenges, solve problems, and earn XP.
+        </p>
+      </div>
+    </section>
+
+    <!-- Challenge selection and filters -->
+    <section class="challenge-list">
+      <div class="challenge-list-header">
+        <div>
+          <p class="section-label">CODING CHALLENGES</p>
+          <h2>Choose a Challenge</h2>
+        </div>
+
+        <p>Start with the basics or take on a harder problem.</p>
+      </div>
+
+      <!-- Filter tabs -->
+      <div
+        class="challenge-filters"
+        role="tablist"
+        aria-label="Challenge categories"
+      >
+        <button
+          type="button"
+          class="challenge-filter active"
+          data-filter="all"
+          role="tab"
+          aria-selected="true"
+        >
+          All
+        </button>
+
+        <button
+          type="button"
+          class="challenge-filter"
+          data-filter="beginner"
+          role="tab"
+          aria-selected="false"
+        >
+          Beginner
+        </button>
+
+        <button
+          type="button"
+          class="challenge-filter"
+          data-filter="python"
+          role="tab"
+          aria-selected="false"
+        >
+          Python
+        </button>
+
+        <button
+          type="button"
+          class="challenge-filter"
+          data-filter="pygame"
+          role="tab"
+          aria-selected="false"
+        >
+          Pygame
+        </button>
+      </div>
+
+      <!-- Grid of available challenges -->
+      <div class="challenge-grid" id="challenge-grid">
+
+        <!-- Challenge: Greeting Program -->
+        <article
+          class="challenge-card"
+          data-challenge="greeting"
+          data-category="beginner python"
+        >
+          <div class="challenge-card-top">
+            <span class="challenge-difficulty beginner">BEGINNER</span>
+            <span class="challenge-status">NOT STARTED</span>
+          </div>
+
+          <div class="challenge-card-content">
+            <div class="challenge-icon" aria-hidden="true">&gt;_</div>
+            <h3>Greeting Program</h3>
+
+            <p>
+              Create a program that stores a player's name and prints a personalised greeting.
+            </p>
+
+            <div class="challenge-tags">
+              <span>Variables</span>
+              <span>Strings</span>
+              <span>print()</span>
+            </div>
+          </div>
+
+          <div class="challenge-card-footer">
+            <span class="challenge-xp"><strong>+50</strong> XP</span>
+
+            <a
+              href="tryityourself.html?challenge=greeting"
+              class="challenge-button"
+            >
+              Start Challenge
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Challenge: Score Calculator -->
+        <article
+          class="challenge-card"
+          data-challenge="score-calculator"
+          data-category="beginner python"
+        >
+          <div class="challenge-card-top">
+            <span class="challenge-difficulty beginner">BEGINNER</span>
+            <span class="challenge-status">NOT STARTED</span>
+          </div>
+
+          <div class="challenge-card-content">
+            <div class="challenge-icon" aria-hidden="true">+</div>
+            <h3>Score Calculator</h3>
+
+            <p>
+              Create a program that calculates and displays a player's total game score.
+            </p>
+
+            <div class="challenge-tags">
+              <span>Variables</span>
+              <span>Numbers</span>
+              <span>Operators</span>
+            </div>
+          </div>
+
+          <div class="challenge-card-footer">
+            <span class="challenge-xp"><strong>+75</strong> XP</span>
+
+            <a
+              href="tryityourself.html?challenge=score-calculator"
+              class="challenge-button"
+            >
+              Start Challenge
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Challenge: Number Guessing -->
+        <article
+          class="challenge-card"
+          data-challenge="number-guessing"
+          data-category="intermediate python"
+        >
+          <div class="challenge-card-top">
+            <span class="challenge-difficulty intermediate">INTERMEDIATE</span>
+            <span class="challenge-status">NOT STARTED</span>
+          </div>
+
+          <div class="challenge-card-content">
+            <div class="challenge-icon" aria-hidden="true">?</div>
+            <h3>Number Guessing</h3>
+
+            <p>
+              Build a simple number guessing program using conditions to check the player's answer.
+            </p>
+
+            <div class="challenge-tags">
+              <span>Conditions</span>
+              <span>Input</span>
+              <span>Logic</span>
+            </div>
+          </div>
+
+          <div class="challenge-card-footer">
+            <span class="challenge-xp"><strong>+100</strong> XP</span>
+
+            <a
+              href="tryityourself.html?challenge=number-guessing"
+              class="challenge-button"
+            >
+              Start Challenge
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Challenge: Countdown -->
+        <article
+          class="challenge-card"
+          data-challenge="countdown"
+          data-category="intermediate python"
+        >
+          <div class="challenge-card-top">
+            <span class="challenge-difficulty intermediate">INTERMEDIATE</span>
+            <span class="challenge-status">NOT STARTED</span>
+          </div>
+
+          <div class="challenge-card-content">
+            <div class="challenge-icon" aria-hidden="true">01</div>
+            <h3>Countdown</h3>
+
+            <p>
+              Use a loop to create a countdown that displays numbers from ten down to one.
+            </p>
+
+            <div class="challenge-tags">
+              <span>Loops</span>
+              <span>range()</span>
+              <span>Output</span>
+            </div>
+          </div>
+
+          <div class="challenge-card-footer">
+            <span class="challenge-xp"><strong>+100</strong> XP</span>
+
+            <a
+              href="tryityourself.html?challenge=countdown"
+              class="challenge-button"
+            >
+              Start Challenge
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Challenge: Move a Player -->
+        <article
+          class="challenge-card"
+          data-challenge="player-movement"
+          data-category="intermediate pygame"
+        >
+          <div class="challenge-card-top">
+            <span class="challenge-difficulty intermediate">INTERMEDIATE</span>
+            <span class="challenge-status">NOT STARTED</span>
+          </div>
+
+          <div class="challenge-card-content">
+            <div class="challenge-icon" aria-hidden="true">↑</div>
+            <h3>Move a Player</h3>
+
+            <p>
+              Use Pygame input events to move a player around the screen using the keyboard.
+            </p>
+
+            <div class="challenge-tags">
+              <span>Pygame</span>
+              <span>Input</span>
+              <span>Movement</span>
+            </div>
+          </div>
+
+          <div class="challenge-card-footer">
+            <span class="challenge-xp"><strong>+150</strong> XP</span>
+
+            <a
+              href="tryityourself.html?challenge=player-movement"
+              class="challenge-button"
+            >
+              Start Challenge
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Challenge: Build a Game Loop -->
+        <article
+          class="challenge-card"
+          data-challenge="game-loop"
+          data-category="advanced pygame"
+        >
+          <div class="challenge-card-top">
+            <span class="challenge-difficulty advanced">ADVANCED</span>
+            <span class="challenge-status">NOT STARTED</span>
+          </div>
+
+          <div class="challenge-card-content">
+            <div class="challenge-icon" aria-hidden="true">↻</div>
+            <h3>Build a Game Loop</h3>
+
+            <p>
+              Complete a basic Pygame game loop that handles events, updates the game, and draws each frame.
+            </p>
+
+            <div class="challenge-tags">
+              <span>Pygame</span>
+              <span>Game Loop</span>
+              <span>Events</span>
+            </div>
+          </div>
+
+          <div class="challenge-card-footer">
+            <span class="challenge-xp"><strong>+200</strong> XP</span>
+
+            <a
+              href="tryityourself.html?challenge=game-loop"
+              class="challenge-button"
+            >
+              Start Challenge
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Filtered Empty State -->
+      <div class="challenge-empty" id="challenge-empty" hidden>
+        <h3>No challenges found</h3>
+        <p>Try selecting another category.</p>
+      </div>
+    </section>
+
+    <!-- Projects banner -->
+    <section class="featured-challenge">
+      <div class="featured-challenge-content">
+        <p class="section-label">READY FOR MORE?</p>
+
+        <h2>Build Something Bigger</h2>
+
+        <p>
+          Once you've mastered the fundamentals, combine your Python skills to create complete games.
+        </p>
+
+        <a href="projects.html" class="featured-button">
+          Explore Projects
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div class="featured-challenge-visual" aria-hidden="true">
+        <span>&lt;/&gt;</span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">
+          <img src="img/logo.png" alt="" class="footer-logo-image">
+          <span>Pygame Academy</span>
+        </a>
+        <p>Learn Python. Build Games.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-column">
+          <h2>Learn</h2>
+          <a href="learn.html">Python Basics</a>
+          <a href="learn.html">Pygame</a>
+        </div>
+
+        <div class="footer-column">
+          <h2>Explore</h2>
+          <a href="tryityourself.html">Try It Yourself</a>
+          <a href="challenges.html">Challenges</a>
+          <a href="projects.html">Projects</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Pygame Academy</p>
+      <p>Educational project &bull; Built for high school learners</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

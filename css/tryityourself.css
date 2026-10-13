@@ -1,0 +1,568 @@
+/* ==========================================
+   TRY IT YOURSELF PAGE
+   ========================================== */
+
+
+/* ==========================================
+   Try Page Hero & Container
+   ========================================== */
+
+.try-container {
+  width: min(calc(100% - 48px), var(--max-width));
+  margin: 0 auto;
+}
+
+.try-hero {
+  padding: 65px 0 55px;
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(139, 92, 246, 0.14),
+    transparent 45%
+  );
+  border-bottom: 1px solid var(--border);
+}
+
+.try-hero h1 {
+  margin-bottom: 15px;
+  font-size: clamp(2.1rem, 5vw, 3.2rem);
+}
+
+.try-hero p:not(.section-label) {
+  max-width: 680px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.try-section {
+  padding: 65px 0 80px;
+}
+
+
+/* ==========================================
+   Editor Layout & Panels
+   ========================================== */
+
+.try-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: minmax(0, 1fr);
+  gap: 25px;
+  align-items: stretch;
+}
+
+.editor-panel,
+.output-panel {
+  overflow: hidden;
+  background: var(--surface-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.editor-panel {
+  min-width: 0;
+}
+
+.editor-header,
+.output-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 13px 16px;
+  background: rgba(255, 255, 255, 0.035);
+  border-bottom: 1px solid var(--border);
+}
+
+.editor-header > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.editor-label {
+  color: var(--primary-light);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.editor-example-name {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* ==========================================
+   Code Editor & CodeMirror Customization
+   ========================================== */
+
+.code-editor {
+  display: block;
+  width: 100%;
+  min-height: 500px;
+  padding: 22px;
+  overflow: auto;
+  overflow-wrap: normal;
+  white-space: pre;
+  word-break: normal;
+  resize: vertical;
+  outline: none;
+  background: #080A12;
+  border: 0;
+  color: #E2E8F0;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8rem;
+  line-height: 1.7;
+  tab-size: 2;
+}
+
+.code-editor:focus {
+  box-shadow: inset 0 0 0 1px rgba(139, 92, 246, 0.35);
+}
+
+.CodeMirror {
+  height: 500px;
+  min-height: 500px;
+  background: #080A12;
+  border: 0;
+  color: #E2E8F0;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+
+.CodeMirror-scroll {
+  overflow: auto;
+}
+
+.CodeMirror-gutters {
+  background: #080A12;
+  border-right: 1px solid var(--border);
+}
+
+.CodeMirror-linenumber {
+  color: var(--muted);
+}
+
+.CodeMirror-cursor {
+  border-left: 2px solid #E2E8F0;
+}
+
+.CodeMirror-selected,
+.CodeMirror-focused .CodeMirror-selected {
+  background: rgba(139, 92, 246, 0.3) !important;
+}
+
+
+/* ==========================================
+   Python Syntax Highlighting
+   ========================================== */
+
+.cm-s-default .cm-keyword {
+  color: #C084FC;
+}
+
+.cm-s-default .cm-def {
+  color: #A78BFA;
+}
+
+.cm-s-default .cm-variable {
+  color: #E2E8F0;
+}
+
+.cm-s-default .cm-variable-2 {
+  color: #93C5FD;
+}
+
+.cm-s-default .cm-variable-3 {
+  color: #67E8F9;
+}
+
+.cm-s-default .cm-builtin {
+  color: #67E8F9;
+}
+
+.cm-s-default .cm-number {
+  color: #FBBF24;
+}
+
+.cm-s-default .cm-string,
+.cm-s-default .cm-string-2 {
+  color: #86EFAC;
+}
+
+.cm-s-default .cm-comment {
+  color: #64748B;
+}
+
+.cm-s-default .cm-operator,
+.cm-s-default .cm-meta {
+  color: #F0ABFC;
+}
+
+.cm-s-default .cm-property {
+  color: #93C5FD;
+}
+
+.cm-s-default .cm-atom {
+  color: #FBBF24;
+}
+
+
+/* ==========================================
+   Editor Actions & Output Panels
+   ========================================== */
+
+.editor-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  border-top: 1px solid var(--border);
+}
+
+.editor-actions .button {
+  justify-content: center;
+  min-width: 120px;
+}
+
+.output-panel {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}
+
+.output-header {
+  min-height: 48px;
+}
+
+.output-status {
+  color: var(--muted);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.62rem;
+  font-weight: 600;
+}
+
+.code-output {
+  flex: 1;
+  min-height: 0;
+  max-height: 500px;
+  margin: 0;
+  padding: 22px;
+  overflow: auto;
+  overflow-wrap: normal;
+  white-space: pre;
+  word-break: normal;
+  background: #080A12;
+  color: #E2E8F0;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+  line-height: 1.7;
+}
+
+
+/* ==========================================
+   Pygame Preview Panel
+   ========================================== */
+
+.pygame-preview {
+  margin-top: 25px;
+  overflow: hidden;
+  background: var(--surface-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.pygame-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 13px 16px;
+  background: rgba(255, 255, 255, 0.035);
+  border-bottom: 1px solid var(--border);
+}
+
+.pygame-preview-header > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pygame-status {
+  color: var(--muted);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.62rem;
+  font-weight: 600;
+}
+
+.pygame-preview-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+  padding: 30px;
+  background: #080A12;
+}
+
+#pygame-frame {
+  display: block;
+  width: min(100%, 800px);
+  height: auto;
+  aspect-ratio: 4 / 3;
+  background: #000;
+  border: 1px solid var(--border);
+  box-shadow: 0 0 35px rgba(139, 92, 246, 0.08);
+}
+
+
+/* ==========================================
+   Editor Help & Challenge Instructions
+   ========================================== */
+
+.editor-help {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+  padding: 22px 24px;
+  background: rgba(139, 92, 246, 0.06);
+  border: 1px solid rgba(139, 92, 246, 0.18);
+  border-radius: var(--radius);
+}
+
+.help-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  background: rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 50%;
+  color: var(--primary-light);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.editor-help h2 {
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.editor-help p {
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.7;
+}
+
+.challenge-instructions {
+  width: min(calc(100% - 48px), var(--max-width));
+  margin: 0 auto 25px;
+  padding: 28px 30px;
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.09),
+    rgba(139, 92, 246, 0.025)
+  );
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: var(--radius);
+}
+
+.challenge-instructions-content {
+  max-width: 850px;
+}
+
+.challenge-instructions h2 {
+  margin: 8px 0 10px;
+  font-size: 1.35rem;
+}
+
+.challenge-description {
+  max-width: 700px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.75;
+}
+
+
+/* ==========================================
+   Requirements, Rewards & Goals
+   ========================================== */
+
+.challenge-requirements {
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+.challenge-requirements h3 {
+  margin-bottom: 10px;
+  color: var(--text);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+}
+
+.challenge-requirements ul {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.challenge-requirements li {
+  position: relative;
+  padding-left: 20px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+.challenge-requirements li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary-light);
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
+}
+
+.challenge-reward {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+.challenge-reward strong {
+  color: var(--primary-light);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+}
+
+.challenge-reward span {
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.project-complete-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+.project-complete-button {
+  padding: 10px 15px;
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 6px;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.project-complete-button:hover {
+  background: var(--primary-light);
+  transform: translateY(-1px);
+}
+
+.project-complete-button.completed {
+  background: rgba(74, 222, 128, 0.1);
+  border-color: rgba(74, 222, 128, 0.25);
+  color: #86EFAC;
+  cursor: default;
+}
+
+.project-complete-button.completed:hover {
+  background: rgba(74, 222, 128, 0.1);
+  transform: none;
+}
+
+.project-complete-message {
+  color: #86EFAC;
+  font-size: 0.72rem;
+}
+
+.project-goals-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 12px;
+}
+
+.project-goals-header h3 {
+  margin: 0;
+}
+
+.project-goals-progress {
+  color: var(--primary-light);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.project-goals {
+  display: grid;
+  gap: 7px;
+}
+
+.project-goal {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 11px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.project-goal:hover {
+  background: rgba(139, 92, 246, 0.06);
+  border-color: rgba(139, 92, 246, 0.15);
+}
+
+.project-goal input {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  accent-color: var(--primary);
+}
+
+.project-goal.completed {
+  color: #86EFAC;
+  text-decoration: line-through;
+  text-decoration-color: rgba(134, 239, 172, 0.5);
+}
+
+.project-goal.completed input {
+  accent-color: #4ADE80;
+}
